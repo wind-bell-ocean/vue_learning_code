@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue 测试实例</title>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <h1>{{ name }}</h1>
+          <p>{{ message }}</p>
+        </div>
+        
+        <script>
+          app =  new Vue({
+          el: '#app',
+          data: {
+            message: 'Hello Vue.js!',
+            name:'cyy'
+          }
+        })
+        </script>
+    </body>
+</html>

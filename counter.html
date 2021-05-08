@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>计数器</title>
+        <script src ="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id = "app">
+            <h2>当前计数：{{counter}}</h2>
+            <button v-on:click="counter++">+</button><!--v-on代表监听，冒号后为所监听的事件，也即为一个函数事件-->
+            <button v-on:click="counter--">-</button>
+            <!--等效代码定义函数-->
+            <h2>当前计数：{{counter}}</h2>
+            <button v-on:click="add">+</button>
+            <button v-on:click="sub">-</button>
+            <!--语法糖：v-on:click等效于@click-->
+        </div>
+        <script>
+            const app=new Vue({
+                el:"#app",
+                data:{
+                    counter:0
+                },
+                methods:{
+                    add:function(){
+                        this.counter++;//also,app.counter++;
+                        console.log('add被执行')//新增：在控制台显示
+                    },
+                    sub:function(){
+                        this.counter--;
+                        console.log('sub被执行')//新增：在控制台显示
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
