@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>mustache语法</title>
+  </head>
+  <body>
+    <div id = "app">
+      <h1>Hello!{{message}}</h1>
+      <!--mustache语法中，不仅可以直接写变量，还可以写表达式-->
+      <h2>{{counter * 2}}</h2>
+      <h2>{{firstName + lastName}}</h2><!--此时没有空格在中间，两个字符串直接连接-->
+      <!--第一种：在表达式中加上空格-->
+      <h2>{{firstName + ' ' + lastName}}</h2>
+      <!--第二种：两个变量分开写-->
+      <h2>{{firstName}} {{lastName}}</h2>
+    </div>
+    <script src = "https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+      let app = new vue({
+        el:document.querySelector("#app"),
+        data:{
+          message:'欢迎学习',
+          firstName:'Chen',
+          lastName:'YangYang',
+          counter:20
+        }
+      })
+    </script>
+  </body>
+</html>
